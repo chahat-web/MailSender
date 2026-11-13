@@ -28,14 +28,14 @@ if (!File.Exists(settingsPath))
     {
         SmtpHost = "smtp.gmail.com",
         SmtpPort = 587,
-        SmtpUser = "chahatbhandari30@gmail.com",
-        FromName = "Chahat Bhnadari",
-        FromEmail = "chahatbhandari30@gmail.com",
+        SmtpUser = "",
+        FromName = "",
+        FromEmail = "",
         Subject = "Full Stack Developer Position - Experienced Software Engineer",
         BodyTemplate = "Dear {recipientName},\n\nI hope this email finds you well. I am writing to express my strong interest in the Full Stack Developer position at your organization. With extensive experience in full-stack development, I bring expertise in modern web technologies including React, Node.js, .NET Core, and cloud platforms.\n\nMy technical skills include:\n- Frontend: React.js, TypeScript, HTML5/CSS3\n- Backend: .NET Core, Node.js, Python\n- Database: SQL Server, MongoDB\n- Cloud: AWS, Azure, Docker\n\nI believe my experience in building scalable applications and commitment to clean, maintainable code would make me a valuable addition to your team.\n\nI have attached my resume for your review. I would welcome the opportunity to discuss how my skills align with your team's needs.\n\nThank you for considering my application.\n\nBest regards,\n{name}\nPhone: {phone}\nEmail: {email}\nGitHub: https://github.com/chahat-web",
         ResumeAttachmentPath = defaultResumePath,
         UseStartTls = true,
-        ContactPhone = "+91 9351601168"
+        ContactPhone = ""
     };
     
     File.WriteAllText(settingsPath, JsonSerializer.Serialize(defaultConfig, new JsonSerializerOptions 
@@ -328,7 +328,7 @@ try
 					.Replace("{recipientName}", recipientName)
 					.Replace("{COMPANY}", company)
 					.Replace("{email}", cfg.FromEmail)
-					.Replace("{name}", cfg.FromName ?? "Harsh Goyal")
+					.Replace("{name}", cfg.FromName ?? "Chahat Bhandari")
 					.Replace("{phone}", cfg.ContactPhone);
 
 				// Removed company name injection from greeting - keeping it clean and personal
